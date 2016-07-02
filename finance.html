@@ -22,4 +22,9 @@
       <button type="button" class = "btn btn-primary">紀錄</button>
       </center>
     </font>
+    <script>
+      var fdb = new ForerunnerDB();
+      var db = fdb.db("my_db");
+      var expenditureCollection = db.collection('expenditure');
+    </script>
     <body>
