@@ -26,6 +26,7 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("my_db");
       var financeCollection = db.collection('finance');
+      financeCollection.load(finance);
         $(".btn-finance").on("click",function(){
           var finance = {
             date:$(".date").val(),
