@@ -12,19 +12,27 @@
       <h1>記帳</h1>
       <br>
       <h3>日期:</h3>
-      <input type = "date"></input>
+      <input type = "date" class="date"></input>
       <h3>事件:</h3>
-      <input></input>
+      <input class="how"></input>
       <h3>金額:</h3>
-      <input></input>
+      <input class="money"></input>
       <br>
       <br>
-      <button type="button" class = "btn btn-primary">紀錄</button>
+      <button type="button" class = "btn btn-primary btn-finance">紀錄</button>
       </center>
     </font>
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("my_db");
       var financeCollection = db.collection('finance');
+        $(".btn-finance").on("click",function{
+          var finance = {
+            date:$(".date").val(),
+            how:$(".how").val(),
+            money:$(".money").val()
+          }
+          financeCollection.insert(finance);
+        })
     </script>
     <body>
