@@ -26,7 +26,7 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("my_db");
       var financeCollection = db.collection('finance');
-      financeCollection.load(finance);
+      financeCollection.load();
         $(".btn-finance").on("click",function(){
           var finance = {
             date:$(".date").val(),
@@ -34,7 +34,7 @@
             money:$(".money").val()
           }
           financeCollection.insert(finance);
-          financeCollection.save(finance);
+          financeCollection.save();
           alert("儲存成功");
           $(".date").val("");
           $(".how").val("");
