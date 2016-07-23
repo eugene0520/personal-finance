@@ -21,9 +21,10 @@
     <table class="table">
       <thead>
         <tr>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日期</th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事件</th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金額</th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;#</th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;日期</th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;事件</th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;金額</th>
         </tr>
       </thead>
       <tbody>
@@ -35,6 +36,7 @@
 for(var i=0,i>=9,i++){
   $("tbody").append(
     "<tr>"+
+      "<th>"+i+"<th>"
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].date+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].how+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].money+"</th>"+
