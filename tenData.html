@@ -46,7 +46,7 @@ financeCollection.load(function(){
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].money+"</th>"+
     "<tr>"
   );
-  
+  console.log(i)
 }});
 </script>
 </body>
