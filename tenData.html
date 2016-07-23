@@ -33,7 +33,7 @@
   </center>
 </font>
 <script>
-for(var i=0,i>=9,i++){
+financeCollection.load({for(var i=0,i>=9,i++){
   $("tbody").append(
     "<tr>"+
       "<th>"+i+"<th>"
@@ -42,7 +42,7 @@ for(var i=0,i>=9,i++){
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].money+"</th>"+
     "<tr>"
   )
-}
+}});
 </script>
 </body>
 </html>
