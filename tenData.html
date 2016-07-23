@@ -34,16 +34,18 @@ var fdb = new ForerunnerDB();
 var db = fdb.db("my_db");
 var financeCollection = db.collection('finance');
 financeCollection.load(function(){
+  var x = 1
   for(var i=0;i<=9;i++){
   $("tbody").append(
     "<tr>"+
-      "<th>"+i+1+"</th>"+
+      "<th>"+x+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].date+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].how+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].money+"</th>"+
     "<tr>"
   );
-  console.log(i)
+  console.log(i);
+  x++;
 }});
 </script>
 </body>
