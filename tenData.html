@@ -1,7 +1,4 @@
-<!DOCTYPE>
-<html>
-<head>
-<script src="js/jquery.js"></script>
+pt src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/fdb-all.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -21,10 +18,10 @@
     <table class="table">
       <thead>
         <tr>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#</th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日期</th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;事件</th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金額</th>
+          <th>#</th>
+          <th>日期</th>
+          <th>事件</th>
+          <th>金額</th>
         </tr>
       </thead>
       <tbody>
@@ -40,7 +37,7 @@ financeCollection.load(function(){
   for(var i=0;i<=9;i++){
   $("tbody").append(
     "<tr>"+
-      "<th>"+i+"</th>"+
+      "<th>"+i+1+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].date+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].how+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].money+"</th>"+
