@@ -3,7 +3,6 @@
 <head>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script> 
-<script src="js/fdb-all.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <meta name = "viewport" content = "width=device-width,initial-scale=1,maximum-scale=1">
 </head>
@@ -33,6 +32,9 @@
   </center>
 </font>
 <script>
+var fdb = new ForerunnerDB();
+var db = fdb.db("my_db");
+var financeCollection = db.collection('finance');
 financeCollection.load(function(){
   for(var i=0;i>=9;i++){
   $("tbody").append(
