@@ -28,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-      <tbody>  
+      </tbody>  
     </table>
   </center>
 </font>
@@ -40,12 +40,13 @@ financeCollection.load(function(){
   for(var i=0;i>=9;i++){
   $("tbody").append(
     "<tr>"+
-      "<th>"+i+"<th>"+
+      "<th>"+i+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].date+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].how+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].money+"</th>"+
     "<tr>"
-  )
+  );
+  
 }});
 </script>
 </body>
