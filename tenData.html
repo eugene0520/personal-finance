@@ -37,7 +37,7 @@ var fdb = new ForerunnerDB();
 var db = fdb.db("my_db");
 var financeCollection = db.collection('finance');
 financeCollection.load(function(){
-  for(var i=0;i>=9;i++){
+  for(var i=0;i<=9;i++){
   $("tbody").append(
     "<tr>"+
       "<th>"+i+"</th>"+
