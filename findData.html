@@ -18,7 +18,25 @@
     </br>
     <input type = "date"></input>
     ~
-   <input type = "date"></input>
+    <input type = "date"></input>
+    <table class="table">
+    <button type="button" class="btn btn-primary find-btn">查詢</button></button>
+    <thead>
+    </thead>
+    <tbody>
+    </body>  
+    </table>
   </center>
+  <script>
+    var fdb = new ForerunnerDB();
+    var db = fdb.db("my_db");
+    var financeCollection = db.collection('finance');
+    $(".find-btn").on("click",function(){
+      var date = new Date();
+      var year = date.getFullYear();
+      var month date = date.getMonth()+1;
+      console.log(year+"-"+month+"-01");
+    })
+  </script>
 </body>
 </html>
