@@ -26,6 +26,12 @@
     <br>
     <button type="button" class="btn btn-primary find-btn">查詢</button></button>
     <thead>
+      <tr>
+        <th>#</th>
+        <th>日期</th>
+        <th>事件</th>
+        <th>金額</th>
+      </tr>
     </thead>
     <tbody>
     </body>  
@@ -35,6 +41,7 @@
     var fdb = new ForerunnerDB();
     var db = fdb.db("my_db");
     var financeCollection = db.collection('finance');
+    financeCollection.load()
     $(".find-btn").on("click",function(){
       var date = new Date();
       var year = date.getFullYear();
@@ -42,10 +49,16 @@
       if(month<10){
         month = "0"+month;
       }
-      financeCollection.find({
-        date:{$gt:(year+"-"+month+"-01")}
+      for(var i=0;financeCollection.find({date:{$gt:(year+"-"+month+"-01")}}).length>=i;i++){
+        $("tbody").append(
+          "<tr>"+
+          "<th>"+i+"</th>"+
+          "<th>"+financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})[i].date+"</th>"+
+          "<th>"+financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})[i].how+"</th>"+
+          "<th>"+financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})[i].money+"</th>"+
+          "<tr>"
+        )};
       })
-    })
   </script>
 </body>
 </html>
