@@ -50,8 +50,8 @@
         month = "0"+month;
       }
       var nowData = financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})
+      $("tbody *").remove();
       for(var i=0;nowData.length>i;i++){
-        $("tbody *").remove();
         $("tbody").append(
           "<tr>"+
           "<th>"+i+"</th>"+
