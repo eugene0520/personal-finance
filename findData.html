@@ -49,14 +49,15 @@
       if(month<10){
         month = "0"+month;
       }
-      for(var i=0;financeCollection.find({date:{$gt:(year+"-"+month+"-01")}}).length>=i;i++){
+      var nowData = financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})
+      for(var i=0;nowData.length>i;i++){
         $("tbody *").remove();
         $("tbody").append(
           "<tr>"+
           "<th>"+i+"</th>"+
-          "<th>"+financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})[i].date+"</th>"+
-          "<th>"+financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})[i].how+"</th>"+
-          "<th>"+financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})[i].money+"</th>"+
+          "<th>"+nowData[i].date+"</th>"+
+          "<th>"+nowData.how+"</th>"+
+          "<th>"+nowData[i].money+"</th>"+
           "<tr>"
         )};
       })
