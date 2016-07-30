@@ -50,6 +50,7 @@
         month = "0"+month;
       }
       for(var i=0;financeCollection.find({date:{$gt:(year+"-"+month+"-01")}}).length>=i;i++){
+        $("tbody *").remove();
         $("tbody").append(
           "<tr>"+
           "<th>"+i+"</th>"+
