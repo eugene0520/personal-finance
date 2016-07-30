@@ -42,7 +42,9 @@
       if(month<10){
         month = "0"+month;
       }
-      console.log(year+"-"+month+"-01");
+      financeCollection.find({
+        date:{$gt:(year+"-"+month+"-01")}
+      })
     })
   </script>
 </body>
