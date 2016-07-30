@@ -43,9 +43,9 @@
     var financeCollection = db.collection('finance');
     financeCollection.load()
     $(".find-btn").on("click",function(){
-      var date = new Date();
-      var year = date.getFullYear();
-      var month = date.getMonth()+1;
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth()+1;
       if(month<10){
         month = "0"+month;
       }
