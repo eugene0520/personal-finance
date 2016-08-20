@@ -67,7 +67,7 @@
       console.log("C1");
       
       for(var i=0;6>i;i++){
-        financeCollection.find({category: {$in: [category[i]]}});
+        console.log(financeCollection.find({category: {$in: [category[i]]}}));
         for(var x=0;financeCollection.find({category: {$in: [category[i]]}}).length>x;x++){
           money[i]=money[i]*1+financeCollection.find({category: {$in: [category[i]]}})[x].money*1;
         }
