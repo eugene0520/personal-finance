@@ -63,13 +63,12 @@
         month = "0"+month;
       }
       })
-      var category1=["食","衣","住","行","育","樂"];
+      var category=["食","衣","住","行","育","樂"];
       var money=[0,0,0,0,0,0]
       for(var i=0;6>i;i++){
         financeCollection.find({category: {$in: [category1[i]]}});
-        for(var x=0;financeCollection.find({category: {$in: [category1[i]]}}).length;x++){
+        for(var x=0;financeCollection.find({category: {$in: [category[i]]}}).length;x++){
           money[i]=money[i]+financeCollection.find({category: {$in: [category1[i]]}})[x];
-          console.log(money[i])
         }
       }
       
