@@ -21,6 +21,7 @@
           <th>#</th>
           <th>日期</th>
           <th>事件</th>
+          <th>類別</th>
           <th>金額</th>
         </tr>
       </thead>
@@ -40,6 +41,7 @@ financeCollection.load(function(){
       "<th>"+i+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].date+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].how+"</th>"+
+     "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].category+"</th>"+
       "<th>"+financeCollection.find({},{$orderBy:{date:-1}})[i].money+"</th>"+
     "<tr>"
   );
