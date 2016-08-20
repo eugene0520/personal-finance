@@ -16,11 +16,13 @@
       <h3>事件:</h3>
       <input class="how"></input>
       <h3>類別:</h3>
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
+        <select class="category">
+          <option>食</option>
+          <option>衣</option>
+          <option>住</option>
+          <option>行</option>
+          <option>育</option>
+          <option value="audi">樂</option>
         </select>
       <h3>金額:</h3>
       <input class="money"></input>
@@ -38,6 +40,7 @@
           var finance = {
             date:$(".date").val(),
             how:$(".how").val(),
+            category:$(".category").val(),
             money:$(".money").val()
           }
           financeCollection.insert(finance);
@@ -45,6 +48,7 @@
           alert("儲存成功");
           $(".date").val("");
           $(".how").val("");
+          $(".category").val("");
           $(".money").val("");
         })
           
