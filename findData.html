@@ -76,6 +76,7 @@
         }
       }
       for(var i = 0;6>i;i++){
+        $("tbody *").remove();
         $(".category").append(
           "<tr>"+
           "<th>"+category[i]+"</th>"+
@@ -84,9 +85,10 @@
         )
       }
       var nowData = financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})
-      $("tbody *").remove();
+      
       
       console.log("C2");
+      $("tbody *").remove();
       for(var i=0;nowData.length>i;i++){
         $(".money").append(
           "<tr>"+
