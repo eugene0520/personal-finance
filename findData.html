@@ -68,7 +68,7 @@
       for(var i=0;6>i;i++){
         financeCollection.find({category: {$in: [category[i]]}});
         for(var x=0;financeCollection.find({category: {$in: [category[i]]}}).length;x++){
-          money[i]=money[i]+financeCollection.find({category: {$in: [category1[i]]}})[x];
+          money[i]=money[i]+financeCollection.find({category: {$in: [category[i]]}})[x];
           console.log(money[i])
         }
       }
