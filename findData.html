@@ -65,7 +65,9 @@
       
       var category=["食","衣","住","行","育","樂"];
       var money=[0,0,0,0,0,0]
-      
+      for(var i = 0;6>i;i++){
+      var allmoney=allmoney+money[i]
+      }
       console.log("C1");
       
       for(var i=0;6>i;i++){
@@ -74,10 +76,14 @@
           money[i]=money[i]+financeCollection.find({category: {$in: [category[i]]}})[x];
         }
       }
-      
-      $(".category").append(
-
+      for(var i = 0;6>i;i++){
+        $(".category").append(
+          "<tr>"+
+          "<th>"+category[i]+"</th>"+
+          "<th>"+money[i]+"</th>"+
+          "<th>"+money[i]/allmoney*100+'%'+"</th>"
         )
+      }
       var nowData = financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})
       $("tbody *").remove();
       
