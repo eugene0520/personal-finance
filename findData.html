@@ -65,6 +65,9 @@
       
       var category=["食","衣","住","行","育","樂"];
       var money=[0,0,0,0,0,0]
+      
+      console.log("C1");
+      
       for(var i=0;6>i;i++){
         financeCollection.find({category: {$in: [category[i]]}});
         for(var x=0;financeCollection.find({category: {$in: [category[i]]}}).length;x++){
@@ -77,6 +80,8 @@
         )
       var nowData = financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})
       $("tbody *").remove();
+      
+      console.log("C2");
       for(var i=0;nowData.length>i;i++){
         $(".money").append(
           "<tr>"+
