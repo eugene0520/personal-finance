@@ -67,7 +67,6 @@
       var money=[0,0,0,0,0,0]
       for(var i=0;category.length>=i;i++){
         console.log(financeCollection.find({category: {$in: [category[i]]}}));
-        console.log(i);
         for(var x=0;financeCollection.find({category: {$in: [category[i]]}}).length>x;x++){
           money[i]=money[i]*1+financeCollection.find({category: {$in: [category[i]]}})[x].money*1;
         }
@@ -77,8 +76,9 @@
         allmoney=allmoney+money[i]*1
       }
       
-      for(var i = 0;6>=i;i++){
-        $("tbody *").remove();
+      for(var i = 0;6>i;i++){
+        $(".category *").remove();
+        console.log(i)
         $(".category").append(
           "<tr>"+
           "<th>"+category[i]+"</th>"+
