@@ -75,10 +75,8 @@
       for(var i = 0;6>=i;i++){
         allmoney=allmoney+money[i]*1
       }
-      
+      $(".category *").remove();
       for(var i = 0;6>i;i++){
-        $(".category *").remove();
-        console.log(i)
         $(".category").append(
           "<tr>"+
           "<th>"+category[i]+"</th>"+
