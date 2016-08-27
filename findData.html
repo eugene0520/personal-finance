@@ -87,8 +87,7 @@
           "<th>"+nowData[i].money*1/allmoney*100+'%'+"</th>"
         )
       }
-      
-      
+      var nowData = financeCollection.find({date:{$gt:(year+"-"+"10"+"-01")}})
       
       console.log("C2");
       $("tbody *").remove();
