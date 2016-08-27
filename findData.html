@@ -64,8 +64,6 @@
       
       var category=["食","衣","住","行","育","樂"];
       var money=[0,0,0,0,0,0]
-      console.log("C1");
-      
       for(var i=0;category.length>=i;i++){
         console.log(financeCollection.find({category: {$in: [category[i]]}}));
         console.log(i);
@@ -74,11 +72,11 @@
         }
       }
       var allmoney = 0
-      for(var i = 0;6>i;i++){
+      for(var i = 0;6>=i;i++){
         allmoney=allmoney+money[i]*1
       }
       
-      for(var i = 0;6>i;i++){
+      for(var i = 0;6>=i;i++){
         $("tbody *").remove();
         $(".category").append(
           "<tr>"+
