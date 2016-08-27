@@ -66,7 +66,7 @@
       
       var category=["食","衣","住","行","育","樂"];
       var money=[0,0,0,0,0,0]
-      for(var i=0;category.length>=i;i++){
+      for(var i=0;category.length>i;i++){
         console.log(financeCollection.find({category: {$in: [category[i]]}}));
         for(var x=0;financeCollection.find({category: {$in: [category[i]]}}).length>x;x++){
           if(isNaN(financeCollection.find({category: {$in: [category[i]]}})[x].money*1)){}
@@ -74,12 +74,11 @@
         }}
       
       var allmoney = 0
-      for(var i = 0;6>=i;i++){
+      for(var i = 0;6>i;i++){
         allmoney=allmoney+money[i]*1
       }
       
       var nowData = financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})
-      
       $(".category *").remove();
       for(var i = 0;6>i;i++){
         $(".category").append(
