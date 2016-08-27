@@ -70,7 +70,7 @@
         for(var x=0;financeCollection.find({category: {$in: [category[i]]}}).length>x;x++){
           if(isNaN(money[financeCollection.find({category: {$in: [category[i]]}})[x].money*1])){}
           else{money[i]=money[i]*1+financeCollection.find({category: {$in: [category[i]]}})[x].money*1;}
-        }
+        }}
       
       var allmoney = 0
       for(var i = 0;6>=i;i++){
