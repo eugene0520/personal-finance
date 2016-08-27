@@ -68,14 +68,13 @@
       for(var i=0;category.length>=i;i++){
         console.log(financeCollection.find({category: {$in: [category[i]]}}));
         for(var x=0;financeCollection.find({category: {$in: [category[i]]}}).length>x;x++){
-          if(isNaN(money[financeCollection.find({category: {$in: [category[i]]}})[x].money*1;}])){}
+          if(isNaN(money[financeCollection.find({category: {$in: [category[i]]}})[x].money*1}])){}
           else{money[i]=money[i]*1+financeCollection.find({category: {$in: [category[i]]}})[x].money*1;}
         }
       }
       var allmoney = 0
       for(var i = 0;6>=i;i++){
-        if(isNaN(money[i])){}
-        else(allmoney=allmoney+money[i]*1)
+        allmoney=allmoney+money[i]*1
       }
       
       var nowData = financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})
