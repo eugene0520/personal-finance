@@ -53,6 +53,7 @@
     var fdb = new ForerunnerDB();
     var db = fdb.db("my_db");
     var financeCollection = db.collection('finance');
+    financeCollection.remove()
     financeCollection.load()
     $(".find-btn").on("click",function(){
       var now = new Date();
