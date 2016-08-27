@@ -2,6 +2,11 @@ body {
     background-color: #2D3C5F;
     color: #F2F2F2;
 }
-input,select {
+input{
     color: #2D3C5F ;
+}
+select {
+    color: #2D3C5F ;
+    width: 5.5em;
+    height: 5.5em
 }
