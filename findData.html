@@ -85,7 +85,11 @@
         allmoney=allmoney+money[i]*1
       }
       
-      var nowData = financeCollection.find({date:{$gt:()}})
+      var nowData = financeCollection.find({date:{
+        $gt:(firstday)
+        $lt:(lastday)
+        }
+      })
       $(".category *").remove();
       for(var i = 0;6>i;i++){
         $(".category").append(
