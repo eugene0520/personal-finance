@@ -74,10 +74,10 @@
       var category=["食","衣","住","行","育","樂"];
       var money=[0,0,0,0,0,0]
       for(var i=0;category.length>i;i++){
-        console.log(financeCollection.find({date:{$gt:(firstday),$lt:(lastday)}}category: {$in: [category[i]]}))
-        for(var x=0;financeCollection.find({date:{$gt:(firstday),$lt:(lastday)}}category: {$in: [category[i]]}).length>x;x++){
-          if(isNaN(financeCollection.find({date:{$gt:(firstday),$lt:(lastday)}}category: {$in: [category[i]]})*1)){}
-          else{money[i]=money[i]*1+financeCollection.find({date:{$gt:(firstday),$lt:(lastday)}}category: {$in: [category[i]]})[x].money*1;}
+        console.log(financeCollection.find({date:{$gt:(firstday),$lt:(lastday)},category: {$in: [category[i]]}))
+        for(var x=0;financeCollection.find({date:{$gt:(firstday),$lt:(lastday)}},category: {$in: [category[i]]}).length>x;x++){
+          if(isNaN(financeCollection.find({date:{$gt:(firstday),$lt:(lastday)}},category: {$in: [category[i]]})*1)){}
+          else{money[i]=money[i]*1+financeCollection.find({date:{$gt:(firstday),$lt:(lastday)}},category: {$in: [category[i]]})[x].money*1;}
         }}
       
       var allmoney = 0
