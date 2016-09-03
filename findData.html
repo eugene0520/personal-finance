@@ -13,15 +13,15 @@
     </br>
     </br>
     </br>
-    <input type="radio" name = "find" checked>本月份</input>
+    <input type="radio" name = "find" value="month" checked>本月份</input>
     </br>
     <br> 
-    <input type="radio" name = "find">指定期間</input>
+    <input type="radio" name = "find" value="find">指定期間</input>
     </br>
     <br>
-    <input type = "date"></input>
+    <input type = "date" class="first"></input>
     ~
-    <input type = "date"></input>
+    <input type = "date" class="last"></input>
     <table class="table">
     <br>
     <br>
@@ -57,13 +57,19 @@
     financeCollection.remove()
     financeCollection.load()
     $(".find-btn").on("click",function(){
-      var now = new Date();
-      var year = now.getFullYear();
-      var month = now.getMonth()+1;
-      if(month<10){
-        month = "0"+month;
+      var checkRadio = $(input[name:"find"]:checked).val()
+      if(checkRadio=="month"){
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth()+1;
+        if(month<10){
+          month = "0"+month;
+        }
+        var firstday = year+"-"+month+"-01";
+        var lastday = year+"-"+month+"-30";
+      }else{
+        var
       }
-      
       var category=["食","衣","住","行","育","樂"];
       var money=[0,0,0,0,0,0]
       for(var i=0;category.length>i;i++){
@@ -78,7 +84,7 @@
         allmoney=allmoney+money[i]*1
       }
       
-      var nowData = financeCollection.find({date:{$gt:(year+"-"+month+"-01")}})
+      var nowData = financeCollection.find({date:{$gt:()}})
       $(".category *").remove();
       for(var i = 0;6>i;i++){
         $(".category").append(
