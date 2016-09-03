@@ -77,7 +77,7 @@
       for(var i=0;category.length>i;i++){
         var result = financeCollection.find({date: {$gt:(firstday),$lt:(lastday)},category: {$in: [category[i]]}})
         for(var x=0;result.length>x;x++){
-          if(isNaN(result[x]*1)){}
+          if(isNaN(result[x].money*1)){}
           else{money[i]=result[x].money*1;}
         }}
       
