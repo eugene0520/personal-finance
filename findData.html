@@ -57,7 +57,7 @@
     financeCollection.remove()
     financeCollection.load()
     $(".find-btn").on("click",function(){
-      var checkRadio = $("input[name="find"]:checked").val()
+      var checkRadio = $("input[name='find']:checked").val()
       if(checkRadio=="month"){
         var now = new Date();
         var year = now.getFullYear();
