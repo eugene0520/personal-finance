@@ -37,7 +37,6 @@
       <tbody class="category">
       </tbody>  
     </table>
-    <p class = "allMoney"></p> 
     <table class="table">    
       <thead>
         <tr>
@@ -100,8 +99,6 @@
           "<th>"+money[i]*1/allmoney*100+'%'+"</th>"+
           "</tr>"
         )}
-      $(".allMoney *").remove();
-      $(".allMoney").append("總金額:"+allmoney+"元");
       $(".money *").remove();
       for(var i=0;nowData.length>i;i++){
         $(".money").append(
