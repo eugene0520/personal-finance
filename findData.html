@@ -101,7 +101,7 @@
           "</tr>"
         )}
       $(".allMoney *").remove();
-      $(".allMoney").val("總金額:"+allmoney+"元");
+      $(".allMoney").append("總金額:"+allmoney+"元");
       $(".money *").remove();
       for(var i=0;nowData.length>i;i++){
         $(".money").append(
