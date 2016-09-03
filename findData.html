@@ -100,8 +100,7 @@
           "<th>"+money[i]*1/allmoney*100+'%'+"</th>"+
           "</tr>"
         )}
-        $(".allMoney *").remove();
-      $(".allMoney").append("總金額:"+allmoney+"元")
+      $(".allMoney").val("總金額:"+allmoney+"元");
       $(".money *").remove();
       for(var i=0;nowData.length>i;i++){
         $(".money").append(
