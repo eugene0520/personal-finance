@@ -76,6 +76,7 @@
       var money=[0,0,0,0,0,0]
       for(var i=0;category.length>i;i++){
         var result = financeCollection.find({date: {$gte:(firstday),$lte:(lastday)},category: {$in: [category[i]]}})
+        console.log(result)
         for(var x=0;result.length>x;x++){
           if(isNaN(result[x].money*1)){}
           else{money[i]=result[x].money*1;
@@ -84,7 +85,6 @@
        
       var allmoney = 0
       for(var i = 0;6>i;i++){
-        console.log(allmoney)
         allmoney+=money[i]*1
       }
       
