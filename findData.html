@@ -74,8 +74,10 @@
       }
       var category=["食","衣","住","行","育","樂"];
       var money=[0,0,0,0,0,0]
+      console.log(firstday)
+      console.log(lastday)
       for(var i=0;category.length>i;i++){
-        var result = financeCollection.find({date: {$gt:(firstday),$lt:(lastday)},category: {$in: [category[i]]}})
+        var result = financeCollection.find({date: {$gte:(firstday),$lte:(lastday)},category: {$in: [category[i]]}})
         for(var x=0;result.length>x;x++){
           if(isNaN(result[x].money*1)){}
           else{money[i]=result[x].money*1;}
