@@ -9,6 +9,7 @@
   </head>
   <body>
     <font face="verdana">
+     <button onclick="goBack()">GoBack</button>
       <center>
       <h1>記帳</h1>
       <br>
@@ -44,6 +45,9 @@
             category:$(".category").val(),
             money:$(".money").val()
           }
+          function goBack() {
+            window.history.back();
+          }     
           financeCollection.insert(finance);
           financeCollection.save();
           alert("儲存成功");
